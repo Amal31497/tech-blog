@@ -1,0 +1,12 @@
+<div class="card" id="blogPost">
+    <div class="card-body">
+        <h3 class="card-title" id="blogTitle">{{blogs.title}}</h3>
+        <p class="card-title" id="authorInfo">Posted by {{name}} on {{datePosted}}</p>
+        <p class="card-text" id="blogContent">{{blogs.content}}</p>
+    </div>
+    <div class="card" id="comments">
+        {{#each comments as |comment|}}
+        {{> comment-details}}
+        {{/each}}
+    </div>
+</div>
