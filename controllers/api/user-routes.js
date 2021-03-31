@@ -32,6 +32,13 @@ router.post('/login', async (req,res) => {
            res.status(400).json({ message:"Incorrect username or password, please try again" });
            return 
         }
+
+        req.session.save(() => {
+            req.session.user_id = userData.user_id;
+            req.session.logged_in = true;
+
+            res.status(200).json(userData)
+        })
     } catch (err) {
         res.status(400).json(err)
     }

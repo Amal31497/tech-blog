@@ -7,7 +7,8 @@
     <title>TechBlog</title>
 </head>
 <body>
-    <nav class="navbar navbar-light bg-light">
+    <header>
+        <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
             <a class="navbar-brand" href="/">TechBlog</a>
             {{#if logged_in}}
@@ -18,6 +19,11 @@
             {{/if}}
         </div>        
     </nav>
-    {{{body}}}
+    </header>
+    
+    <main>
+       {{{body}}}
+    </main>
+   
 </body>
 </html>
