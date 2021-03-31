@@ -5,12 +5,12 @@ const Comment = require('./Comment')
 
 // Each User can have multiple Blogs on the same account
 User.hasMany(Blog, {
-    foreignKey: 'user_id',
+    foreignKey: 'users_id',
     onDelete: 'CASCADE'
 })
 
 Blog.belongsTo(User, {
-    foreignKey:'user_id'
+    foreignKey:'users_id'
 })
 //----------------------------------------------------------
 
