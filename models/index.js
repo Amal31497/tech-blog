@@ -26,14 +26,14 @@ Comment.belongsTo(Blog, {
 //----------------------------------------------------------
 
 // Each User can have multiple comments
-User.hasMany(Comment, {
-    foreignKey:'user_id',
-    onDelete:'CASCADE'
-})
+// User.hasMany(Comment, {
+//     foreignKey:'user_id',
+//     onDelete:'CASCADE'
+// })
 
-Comment.belongsTo(User, {
-    foreignKey:'user_id'
-})
+// Comment.belongsTo(User, {
+//     foreignKey:'user_id'
+// })
 //----------------------------------------------------------
 
 module.exports = {Blog,User,Comment}

@@ -4,9 +4,8 @@
         <p class="card-title" id="authorInfo">Posted by {{name}} on {{datePosted}}</p>
         <p class="card-text" id="blogContent">{{blogs.content}}</p>
     </div>
-    <div class="card" id="comments">
-        {{#each comments as |comment|}}
-        {{> comment-details}}
-        {{/each}}
-    </div>
+    {{#each comments as |comment|}}
+    {{> comment-details}}
+    {{/each}} 
 </div>
+    

@@ -1,0 +1,8 @@
+<section class="card" id="dashboard">
+    <div class="card-body">
+        {{#each blogs as |blog|}}
+        {{> blog-details}}
+        {{/each}}
+    </div>
+    <button type="button" class="btn btn-success"id="writeBlog">+ New Post</button>
+</section>

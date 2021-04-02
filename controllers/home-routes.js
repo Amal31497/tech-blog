@@ -7,7 +7,7 @@ router.get('/', async (req,res) => {
         const blogData = await User.findAll({
             include:[
                 {
-                    model:Blog,
+                    model:[Blog,Comment]
                 }
             ],
             attributes: { exclude: [ 'password' ] }
