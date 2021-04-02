@@ -4,26 +4,27 @@ const withAuth = require('../utils/auth');
 
 router.get('/', async (req,res) => {
     try {
-        const blogData = await User.findAll({
+        const userData = await User.findAll({
             include:[
                 {
-                    model:[Blog,Comment]
+                    model:Blog,
+                    include:[Comment]
                 }
-            ],
-            attributes: { exclude: [ 'password' ] }
+            ]
         })
 
-        const blogs = blogData.map((blog) => {
-            blog.get({ plain:true })
+        const users = userData.map((user) => {
+            user.get({ plain:true })
         })
 
-        res.render('homepage', {
-            blogs,
-            logged_in: req.session.logged_in
+        // console.log(blogs)
+
+        res.render('homepage',{
+            users
         })
 
     } catch (err) {
-        res.status(500).json(err);
+        res.status(404).json(err);
     }
 })
 

@@ -1,4 +1,3 @@
-<section>
     {{!-- TODO: Add template engine to create a home page. Contents:
     1. Navigation bar(part of main.handlebars)
     2. Display all blogposts contents:
@@ -6,7 +5,8 @@
         b. Blog content(text)
         c. Blog creator
         d. Blog creation date --}}
-    {{#each blogs as |blog|}}
-    {{> blog-details}}
+<div class="row">
+    {{#each users as |user|}}
+    {{> blog-details}}  
     {{/each}}
-</section>
+</div>

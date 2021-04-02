@@ -9,16 +9,16 @@
 <body>
     <header>
         <nav class="navbar navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="/">TechBlog</a>
-            {{#if logged_in}}
-                <a href="/profile">profile</a> |
-                <button class="no-button" id="logout">logout</button>
-            {{else}}
-                <a href="/login">login</a>
-            {{/if}}
-        </div>        
-    </nav>
+            <div class="container-fluid">
+                <a class="navbar-brand" href="/">TechBlog</a>
+                {{#if logged_in}}
+                    <a href="/profile">profile</a> |
+                    <button class="no-button" id="logout">logout</button>
+                {{else}}
+                    <a href="/login">login</a>
+                {{/if}}
+            </div>        
+        </nav>
     </header>
     
     <main>

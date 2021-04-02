@@ -1,10 +1,15 @@
 const router = require('express').Router();
-const { Blog, User } = require('../../models');
+const { Blog, User,Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', async(req,res)=>{
     try {
-        const blogData = await Blog.findAll();
+        const blogData = await Blog.findAll({
+            include:{model:Comment}
+        });
+
+        
+
         res.status(200).json(blogData)
     } catch (err) {
         res.status(500).json(err)
