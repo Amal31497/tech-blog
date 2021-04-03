@@ -1,28 +1,16 @@
 const router = require('express').Router();
-const { Blog, Comment, User } = require('../models');
+const { User,Blog,Comment } = require('../models');
 const withAuth = require('../utils/auth');
 
 router.get('/', async (req,res) => {
     try {
-        const userData = await User.findAll({
-            include:[
-                {
-                    model:Blog,
-                    include:[Comment]
-                }
-            ]
+        const blogData = await Blog.findAll({
+            include:[{model:User},{model:Comment}]
         })
 
-        const users = userData.map((user) => {
-            user.get({ plain:true })
-        })
-
-        // console.log(blogs)
-
-        res.render('homepage',{
-            users
-        })
-
+        const blogs = blogData.map((blog) => blog.get({ plain:true }))
+        return res.render('homepage',{blogs})
+        
     } catch (err) {
         res.status(404).json(err);
     }
@@ -30,15 +18,15 @@ router.get('/', async (req,res) => {
 
 router.get('/dashboard', withAuth, async (req,res) => {
     try {
-        const userData = await User.findByPk(req.session.user_id, {
+        const blogData = await Blog.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: Blog }],
+            include: [{ model: User },{model:Comment}],
         });
 
-        const user = userData.get({ plain: true });
+        const blogs = blogData.map((blog) => blog.get({ plain:true }))
 
         res.render('dashboard', {
-            ...user,
+            blogs,
             logged_in: true
         });
 

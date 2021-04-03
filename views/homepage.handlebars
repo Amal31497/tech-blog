@@ -5,8 +5,15 @@
         b. Blog content(text)
         c. Blog creator
         d. Blog creation date --}}
-<div class="row">
-    {{#each users as |user|}}
-    {{> blog-details}}  
+<div class="row" id="posts">
+    {{#each blogs as |blog|}}
+    <div class="card" id="blogPost">
+        <div class="card-header" id="card-title">
+            <h3 id="blogTitle">{{blog.title}}<span id="blogAuthor">Posted by {{blog.user.name}} on</span></h3>
+        </div>
+        <div class="card-body" id="blogContent">
+            <p class="card-text" >{{blog.content}}</p>
+        </div>
+    </div>
     {{/each}}
 </div>

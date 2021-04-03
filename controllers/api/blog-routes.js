@@ -5,11 +5,11 @@ const withAuth = require('../../utils/auth');
 router.get('/', async(req,res)=>{
     try {
         const blogData = await Blog.findAll({
-            include:{model:Comment}
+            include:[{model:Comment}]
         });
 
-        
-
+        const blogs = blogData.map((blog) => blog.get({ plain:true }))
+        console.log({blogs})
         res.status(200).json(blogData)
     } catch (err) {
         res.status(500).json(err)

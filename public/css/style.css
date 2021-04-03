@@ -1,0 +1,25 @@
+#blogPost{
+    width:80%;
+    padding:0;
+    margin-top:2rem;
+}
+
+#posts{
+    justify-content: center;
+}
+
+#card-title{
+    width:100%;
+    margin:0;
+    background-color: burlywood;
+}
+
+#blogAuthor{
+    font-size: 0.98rem;
+    float:right;
+}
+
+#blogContent:hover{
+    background-color: cornsilk;
+    cursor: pointer;
+}
