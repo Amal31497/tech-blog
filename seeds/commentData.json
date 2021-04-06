@@ -1,14 +1,17 @@
 [
     {
         "comment_content":"Great Post!",
-        "blog_id":1
+        "blog_id":1,
+        "user_id":2
     },
     {
         "comment_content":"Love your post!",
-        "blog_id":1
+        "blog_id":1,
+        "user_id":3
     },
     {
         "comment_content":"Keep em coming, love seeing your content!",
-        "blog_id":2
+        "blog_id":2,
+        "user_id":3
     }
 ]

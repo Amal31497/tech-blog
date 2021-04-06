@@ -3,10 +3,12 @@ const { User,Blog,Comment } = require('../../models');
 
 router.get('/', async (req,res)=>{
     try {
-        const userData = await Blog.findAll({
-            include:[{model:User},{model:Comment}]
+        const userData = await User.findAll({
+            include:[{
+                model:Blog,
+                include:[Comment]
+            }]
         })
-
         res.status(200).json(userData)
     } catch (err) {
         res.status(500).json(err)
@@ -16,7 +18,7 @@ router.get('/', async (req,res)=>{
 router.get('/:id', async (req,res)=> {
     try {
         const userData = await User.findOne({
-            where:{user_id:req.params.id},
+            where:{id:req.params.id},
             include:{model:Blog}
         })
         res.status(200).json(userData)
@@ -24,7 +26,6 @@ router.get('/:id', async (req,res)=> {
         res.status(500).json(err)
     }
 })
-
 
 router.post('/', async(req,res)=>{
     try {
@@ -59,7 +60,7 @@ router.post('/login', async (req,res) => {
         }
 
         req.session.save(() => {
-            req.session.user_id = userData.user_id;
+            req.session.user_id = userData.id;
             req.session.logged_in = true;
 
             res.status(200).json(userData)

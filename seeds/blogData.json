@@ -2,11 +2,11 @@
     {
         "title":"How I learnt javascript in 10 days",
         "content":"I didnt nobody can learn javascript in 10 days, go on w3 schools and study like everyone else, there is no secret pill",
-        "users_id":1
+        "user_id":1
     },
     {
         "title":"React or Angular?",
         "content":"Different workplaces will have demand for different front end libraries, however being proficient in even one of them will give one a huge advantage at a workplace",
-        "users_id":2
+        "user_id":2
     }
 ]

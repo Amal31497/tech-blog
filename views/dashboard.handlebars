@@ -1,7 +1,8 @@
-<section class="card" id="dashboard">
+{{#if logged_in}}
+<div class="card" id="dashboard">
     <div class="card-body">
         {{#each blogs as |blog|}}
-        <div class="card" id="blogPost">
+        <div class="card" id="blogPost {{blog.id}}">
             <div class="card-header" id="card-title">
                 <h3 id="blogTitle">{{blog.title}}<span id="blogAuthor">Posted by {{blog.user.name}} on</span></h3>
             </div>
@@ -11,5 +12,6 @@
         </div>
         {{/each}}
     </div>
-    <button type="button" class="btn btn-success"id="writeBlog">+ New Post</button>
-</section>
+    <button type="button" class="btn btn-success" id="writeBlog">+ New Post</button>
+</div>
+{{/if}}

@@ -14,15 +14,13 @@ const seedDatabase = async () => {
 
   for (const blog of blogData) {
     await Blog.create({
-      ...blog,
-      user_id: users.user_id,
+      ...blog
     });
   }
 
   for(const comment of commentData){
     await Comment.create({
-      ...comment,
-      user_id: users.user_id
+      ...comment
     })
   }
   process.exit(0);

@@ -20,7 +20,7 @@ router.post('/', withAuth, async (req,res) => {
     try {
         const newBlog = await Blog.create({
             ...req.body,
-            users_id: req.session.user_id,
+            user_id: req.session.user_id,
         })
 
         res.status(200).json(newBlog)
@@ -33,8 +33,8 @@ router.delete('/:id', withAuth, async(req,res) => {
     try {
         const blogData = await Blog.destroy({
             where: {
-                blog_id:req.params.blog_id,
-                users_id: req.session.user_id
+                id:req.params.id,
+                user_id: req.session.user_id
             }
         })
 
