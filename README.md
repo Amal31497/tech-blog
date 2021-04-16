@@ -30,9 +30,9 @@
   Please follow this *[link](youtube.com)* to watch the walkthrough video.
 
   #### Screenshots:
-  ![Screenshot](./Assets/Images/screenshot-1)
-  
-            ![Screenshot](./Assets/Images/screenshot-2)
+  ![Screenshot](./Assets/screenshot-1)
+  ![Screenshot](./Assets/screenshot-2)
+  ![Screenshot](./Assets/screenshot-3)
 
   ## Installation:
   Run the following commands in your integrated terminal to initalize the application:
