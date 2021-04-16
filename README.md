@@ -39,15 +39,13 @@
 
     1. git clone [Repository link you can find under "code" button] (To get the code from a repo)
 
-    2. npm install inquirer
+    2. npm install
 
-    3. npm install fs
+    3. npm run watch
 
-    3. node index.js
+    4. Follow the walthrough video for help
 
-    4. Answer all the questions accordingly
-
-    5. Get the output in a form of a new custom generated README.md file
+    5. Enjoy!
   
   ## Credits:
   [w3schools.com](w3schools.com)

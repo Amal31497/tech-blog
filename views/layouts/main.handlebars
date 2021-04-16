@@ -14,10 +14,10 @@
             <div class="container-fluid">
                 <a class="navbar-brand" href="/">TechBlog</a>
                 {{#if logged_in}}
-                    <a href="/dashboard">Dashboard</a> |
-                    <button class="no-button" id="logout">logout</button>
+                    <a href="/dashboard" class="navbar-nav" >Dashboard</a>
+                    <button class="no-button" id="logout" style="float:right;">logout</button>
                 {{else}}
-                    <a href="/login">login</a>
+                    <a href="/login" style="float:right;">login</a>
                 {{/if}}
             </div>        
         </nav>
