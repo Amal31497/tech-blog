@@ -2,12 +2,9 @@
 <div class="card" id="dashboard">
     <div class="card-body">
         {{#each blogs as |blog|}}
-        <div class="card" id="blogPost {{blog.id}}">
-            <div class="card-header" id="card-title">
-                <h3 id="blogTitle">{{blog.title}}<span id="blogAuthor">Posted by {{blog.user.name}} on</span></h3>
-            </div>
-            <div class="card-body" id="blogContent">
-                <p class="card-text" >{{blog.content}}</p>
+        <div class="post">
+            <div class="card-header" id="card-title" style="margin-bottom:1rem;cursor:pointer;">
+                <h3 id="blogTitle" value={{blog.id}}>{{blog.title}}<span class="deletePost" id={{blog.id}} style="float:right;cursor:pointer;">x</span></h3>
             </div>
         </div>
         {{/each}}
@@ -15,3 +12,7 @@
     <button type="button" class="btn btn-success" id="writeBlog">+ New Post</button>
 </div>
 {{/if}}
+
+<script src="/js/delete.js"></script>
+<script src="/js/newPost.js"></script>
+<script src="/js/edit.js"></script>

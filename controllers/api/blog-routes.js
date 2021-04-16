@@ -5,8 +5,8 @@ const withAuth = require('../../utils/auth');
 router.get('/', async(req,res)=>{
     try {
         const blogData = await Blog.findAll({
-            include:[{model:Comment}]
-        });
+            include:[{model:User},{model:Comment}]
+        })
 
         const blogs = blogData.map((blog) => blog.get({ plain:true }))
         console.log({blogs})
@@ -28,6 +28,27 @@ router.post('/', withAuth, async (req,res) => {
         res.status(400).json(err)
     }
 })
+
+router.put('/:id', withAuth, async (req,res)=>{
+    try {
+        const updateBlog = await Blog.update(
+            {
+                title:req.body.title,
+                content:req.body.content
+            },
+            {
+                where:{id:req.params.id}
+            });
+        if (!updateBlog[0]) {
+            res.status(404).json({ message: 'No blogs found with this id!' });
+        }
+
+        res.status(200).json(updateBlog)
+    } catch (err) {
+        res.status(500).json(err)
+    }
+})
+
 
 router.delete('/:id', withAuth, async(req,res) => {
     try {

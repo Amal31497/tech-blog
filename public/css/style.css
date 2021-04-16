@@ -1,7 +1,13 @@
 #blogPost{
-    width:80%;
+    width:60%;
     padding:0;
     margin-top:2rem;
+    padding-left:auto;
+    padding-right:auto;
+}
+
+#dashboard{
+    justify-content: center;
 }
 
 #posts{
@@ -19,7 +25,38 @@
     float:right;
 }
 
-#blogContent:hover{
+#blog-Content:hover, #blog-Title:hover{
     background-color: cornsilk;
+    cursor: pointer;
+}
+
+#blog-Content,#blog-Title{
+    align-items: center;
+    width:93%;
+}
+
+#blog-Title{
+    height:2.4rem;
+}
+
+#blog-Content{
+    height:6rem;
+}
+
+#createNewPost{
+    width:93%;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:25px;
+}
+
+#deletePost:hover{
+    color:red;
+    cursor:pointer;
+    font-weight: bolder;
+}
+
+.card-footer:hover{
+    background-color: darkgray;
     cursor: pointer;
 }

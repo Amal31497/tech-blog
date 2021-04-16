@@ -1,0 +1,16 @@
+<div class="row" id="dashboard-edit">
+        <div class="card" id="blogPost" value={{blog.id}}>
+            <h2 class="card-header">Update this post</h2>
+            <div class="card-body">
+                <h4>Blog Title</h4>
+                <textarea id="blog-Title" placeholder="Title">{{blog.title}}</textarea>
+            </div>
+            <div class="card-body">
+                <h4>Blog Content</h4>
+                <textarea class="card-text" id="blog-Content" placeholder="Content">{{blog.content}}</textarea>
+            </div>
+            <button type="button" class="btn btn-success" id="updatePost">Update Post</button>
+        </div>
+</div>
+
+<script src="/js/submit-edit.js"></script>

@@ -20,7 +20,7 @@ router.get('/', async (req,res) => {
     }
 })
 // -----------------------------------------------------
-router.get('/dashboard', async (req,res) => {
+router.get('/dashboard', withAuth, async (req,res) => {
     try {
         const blogData = await Blog.findAll({
             where:{user_id:req.session.user_id},
@@ -35,6 +35,29 @@ router.get('/dashboard', async (req,res) => {
         
     } catch (err) {
         res.status(404).json(err);
+    }
+})
+// -----------------------------------------------------
+router.get("/create-post", withAuth, async(req,res)=>{
+    try {
+        res.render('create-post')
+    } catch (err) {
+        res.status(404).json(err);
+    }
+})
+// -----------------------------------------------------
+router.get('/edit-post/:id', withAuth, async(req,res)=>{
+    try {
+        const blogData = await Blog.findOne({
+            where:{id:req.params.id}
+        });
+
+        const blog = blogData.get({ plain:true })
+        res.render('edit-post',{
+            blog
+        })
+    } catch (err) {
+        res.status(500).json(err)
     }
 })
 // -----------------------------------------------------
