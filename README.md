@@ -6,7 +6,7 @@
 
   <br>
 
-   [Deployed last version](google.com)
+   [Deployed last version](https://limitless-reaches-70428.herokuapp.com/)
 
    [Github repo](https://github.com/Amal31497/tech-blog)
 
@@ -27,7 +27,7 @@
 
   ## Walkthrough:
   #### Video:
-  Please follow this *[link](youtube.com)* to watch the walkthrough video.
+  Please follow this *[link](https://youtu.be/UyhzCw0iQPo)* to watch the walkthrough video.
 
   #### Screenshots:
   ![Screenshot](./Assets/screenshot-1.png)
