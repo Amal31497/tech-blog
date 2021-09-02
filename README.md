@@ -17,6 +17,7 @@
   ##### * [Technologies used](#Technologies)
   ##### * [Usage walkthrough](#Walkthrough)
   ##### * [Installation](#Installation)
+  ##### * [Contributing](#Contributing)
   ##### * [Credits](#Credits)
   ##### * [License](#License)
   ##### * [Contact Info](#Contact)
