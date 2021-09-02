@@ -46,6 +46,14 @@
     4. Follow the walthrough video for help
 
     5. Enjoy!
+    
+    
+  ## Contributing:
+    To contribute to this repo:
+
+     - Fork the repo
+     - Make changes to forked repo
+     - Submit a pull request to this repo
   
   ## Credits:
   [w3schools.com](w3schools.com)
